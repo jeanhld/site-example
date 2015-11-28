@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SiteExample</title>
+  <title>RD - Site Example</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <nav class="navbar navbar-default">
+    <div class="nav container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Site Example</a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="<%= controller.class == BaseController and controller.action_name == 'home' ? 'active' : '' %>">
+            <%= link_to "Home", root_path %>
+          </li>
+          <li class="<%= controller.class == BaseController and controller.action_name == 'about' ? 'active' : '' %>">
+            <%= link_to "About", about_path %>
+          </li>
+          <li class="<%= controller.class == BaseController and controller.action_name == 'prices' ? 'active' : '' %>">
+            <%= link_to "Prices", prices_path %>
+          </li>
+          <li class="<%= controller.class == BaseController and controller.action_name == 'contact' ? 'active' : '' %>">
+            <%= link_to "Contact", contact_path %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class='content'>
+    <%= yield %>
+  </div>
 
 </body>
 </html>
