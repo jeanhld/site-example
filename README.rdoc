@@ -1,28 +1,23 @@
-== README
+== Example Site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This sample Rails app was developed to send user navigation informations to
+the user-tracke appr, also to create contact.
 
-Things you may want to cover:
+Things you may want to cover to run this app on localhost:
 
-* Ruby version
+* Ruby version: 2.2.3
+* Rails version: 4.2.4
+* Database: Postgres
 
-* System dependencies
+* Configuration:
+  - First Step: You need to clone this repository to your computer.
+  - Second Step: Already on your app folder, run 'bundle install' on your terminal to install gems.
+  - Third Step: Edit the 'config/database.yml' to your settings.
 
-* Configuration
+* Database installation
+  - Fourth Step: To create the databases, run 'rake db:create'.
+  - Fifth Step: Run 'rake db:migrate' to run the database migrations.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* How to run the server with the user-tracker 
+  - Sixth Step: With the above steps completed, run 'rails server -p 8080'.
+  - Seventh Step: Access the app on your browser on 'localhost:8080'
