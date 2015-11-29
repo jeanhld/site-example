@@ -25,8 +25,8 @@
           <li class="<%= controller.class == BaseController and controller.action_name == 'prices' ? 'active' : '' %>">
             <%= link_to "Prices", prices_path %>
           </li>
-          <li class="<%= controller.class == BaseController and controller.action_name == 'contact' ? 'active' : '' %>">
-            <%= link_to "Contact", contact_path %>
+          <li class="<%= controller.class == ContactsController and controller.action_name == 'new' ? 'active' : '' %>">
+            <%= link_to "Contact", new_contact_path %>
           </li>
         </ul>
       </div>
@@ -34,6 +34,9 @@
   </nav>
 
   <div class='content'>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
     <%= yield %>
   </div>
 

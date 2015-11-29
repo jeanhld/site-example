@@ -1,0 +1,13 @@
+%h3 Hello ! Send your email to us for more informations!
+.row
+  .col-md-6
+    %br
+    = form_for @contact, html: { multipart: true, role: 'form' }  do |f|
+      = f.label :email
+      = f.text_field :email, required: true, class: 'form-control'
+      = hidden_field :visitor_id, ''
+      %br
+      = f.button 'Create Contact', class: 'btn btn-primary pull-right', type: :submit
+
+%script{type: 'text/javascript'}
+  setVisitorUidOnForm()

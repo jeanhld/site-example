@@ -7,7 +7,4 @@ class BaseController < ApplicationController
 
   def prices
   end
-  
-  def contact
-  end
 end
