@@ -67,7 +67,7 @@ ready = function() {
   else {
     url = "http://user-tracker.herokuapp.com/visitors/"+user_uid+"/visited_pages";
   }
-  
+
   $.ajax({
     url: url,
     type: "POST",
